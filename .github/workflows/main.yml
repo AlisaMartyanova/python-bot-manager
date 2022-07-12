@@ -16,6 +16,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+
       - name: Login to heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
